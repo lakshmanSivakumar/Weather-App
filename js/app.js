@@ -43,4 +43,13 @@ function city(e) {
     updateCity(cityValue)
         .then( data => updateUI(data))
         .catch( err => console.log(err));
+    
+    //local storage 
+    localStorage.setItem('city', cityValue);
+}
+
+if(localStorage.getItem('city')) {
+    updateCity(localStorage.getItem('city'))
+        .then( data => updateUI(data))
+        .catch( err => console.log(err)); 
 }
